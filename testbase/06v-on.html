@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title></title>
+		<script type="text/javascript" src="../js/vue.js" ></script>
+	</head>
+	<body>
+	<div class="app">
+		<div v-show="show">
+			这是一个显示			
+		</div>
+		<!--v-on可以简写@，直接来用绑定事件的-->
+		<button v-on:click="fn()">按钮</button>
+		<button @click="show=!show">按钮</button>
+
+	</div>
+	<script type="text/javascript">
+		var app = new Vue({
+			el:'.app',
+			data:{
+				show:true
+			},
+			//这里是来写，各种事件触发函数的
+			methods:{
+				fn(){
+					//此处的this是指向全局变量的
+					this.show = !this.show;
+				}
+			}
+			
+		})
+	</script>
+	</body>
+</html>

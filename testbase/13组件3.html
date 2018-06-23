@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title></title>
+		<script type="text/javascript" src="../js/vue.js" ></script>
+	</head>
+	<body>
+	<div class="app">
+		在父组件里面向子组件用 v-bind ，缩写： 接受方式：props<br/>
+		即把div的数据传给wusy里面啊
+		  <wusy v-bind:abc='name' :d='mingzi'></wusy>
+    </div>
+    <script>
+    Vue.component('wusy',{
+    	template:'<div>{{ abc}}{{ d+"======"+abc.ms1  }}</div>',
+    	//获得的
+    	props:['abc','d'],
+    	data:function(){
+    		return {
+    			name : '点击我'
+    		}
+    	}
+    })
+	new Vue({
+		el:'.app',
+		data:{
+			name:{ms1:'123',title:'456'},
+			mingzi:'空间可视对讲d的属性'
+		}
+	})
+	</script>
+	</body>
+</html>

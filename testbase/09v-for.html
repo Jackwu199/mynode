@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title></title>
+		<script type="text/javascript" src="../js/vue.js" ></script>
+	</head>
+	<body>
+	<div class="app">
+		<ul>
+			<li v-for="(i,index) in news">{{ i.name }}今年{{i.age}}岁============{{ index }}</li>
+			<li v-for="(i,index) in fn()">{{ i }}============{{ index }}</li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		var app = new Vue({
+			el:'.app',
+			data:{
+				news:[
+					{name:'无敌',age:28},
+					{name:'欢迎',age:22},
+					{name:'解密',age:23},
+					{name:'技术',age:25},
+				]
+			},
+			methods:{
+				fn(){
+					var arr = [];
+					for (var i = 0;i<10;i++) {
+						arr.push(i);
+					}
+					return arr;
+				}
+			}
+		})
+	</script>
+	</body>
+</html>

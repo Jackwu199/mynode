@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title></title>
+		<script type="text/javascript" src="../js/vue.js" ></script>
+	</head>
+	<body>
+	<div class="app">
+		<z1></z1>
+    </div>
+    <script>
+        Vue.component('z1',{
+          template: '<div @click="a()"> {{ name }} </div>',
+          /* 子组件的data 必须是一个函数 */
+          data: function () {
+            return {
+              name: '点击我就弹窗'
+            }
+          },
+//        	这个函数独立的,不予下面的a函数有关
+          methods: {
+            a: function (){
+                alert(1);
+            }
+          }
+        });
+        new Vue({
+          el: '.app',
+          methods: {
+            a: function (){
+              alert(2)
+            }
+          }
+        })
+	</script>
+	</body>
+</html>

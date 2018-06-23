@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title></title>
+		<script type="text/javascript" src="../js/vue.js" ></script>
+	</head>
+	<body>
+	<div class="app">
+		<div v-if="name =='1'">
+			<a href="">登录</a>
+			<!--//v-bind:key="1" 是唯一的标识符，-->
+			用户名: <input type="text" v-bind:key="1"  value="" />
+		</div>
+		<div v-else-if="name == '2'">
+			密码: <input type="text"v-bind:key="2"  value="" />
+		</div>
+		<div v-else>
+			都不是的~~~~~
+		</div>
+		<div v-show="show">
+			这是一个显示框
+		</div>
+		<input type="text" v-model="name" value="输入1或2或其他"/>
+		<input type="checkbox" v-model="show" value="" />
+	</div>
+	<script type="text/javascript">
+		var app = new Vue({
+			el:".app",
+			data:{
+				name:'1',
+				show:true
+			}
+		})
+	</script>
+	</body>
+</html>

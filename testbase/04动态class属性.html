@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title></title>
+		<script type="text/javascript" src="../js/vue.js" ></script>
+	</head>
+	<style>
+		.box3{width: 200px;height: 200px;border: 2px;}
+		.box1{background: red;width: 200px;height: 200px;border: 2px red solid;}
+		.box2{width: 200px;height: 200px;border: 2px blue solid;}
+	</style>
+	<body>
+	<div class="app">
+			<div :class="{box1:checkbox1,box2:checkbox2,box3:checkbox3}"></div>
+			<input type="checkbox" name="a" id="a" v-model="checkbox1"/>
+			<input type="checkbox" name="a" id="a" v-model="checkbox2"/>
+	</div>
+	<script type="text/javascript">
+		var app=new Vue({
+			el:".app",
+			data:{
+				checkbox1:false,
+				checkbox2:false,
+				checkbox3:true
+			}
+		})
+	</script>
+	</body>
+</html>

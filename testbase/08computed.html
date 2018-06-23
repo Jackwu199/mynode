@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title></title>
+		<script type="text/javascript" src="../js/vue.js" ></script>
+	</head>
+	<body>
+	<div class="app">
+		数量 <input type="text" v-model="inp1" />		
+		单价 <input type="text" v-model="inp2" />
+		<p> 总金额  {{ fn }}</p>
+	</div>
+	<script type="text/javascript">
+		new Vue({
+			el:'.app',
+			data:{
+				inp1:'',
+				inp2:''
+			},
+			computed: {
+				fn(){//调用computed 的函数不要加括号  如fn
+					return this.inp1 * this.inp2
+				}
+			}
+//			methods:{
+//				fn(){//methods 的函数必须加括号  如fn()
+//					return this.inp1 * this.inp2
+//				}
+//			}
+		})
+	</script>
+	</body>
+</html>

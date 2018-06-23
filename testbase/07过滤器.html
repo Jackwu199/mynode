@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title></title>
+		<script type="text/javascript" src="../js/vue.js" ></script>
+	</head>
+	<body>
+	<div class="app">
+		{{ inp |fn('过滤器') }}<br>
+		<input v-model="inp" type="text" />
+	</div>
+	<script type="text/javascript">
+		new Vue({
+			el:".app",
+			data:{
+				inp:""
+			},
+			methods:{},
+//			当我们写过滤器的时候 数据是传递到过滤器函数里
+//     		最终显示什么内容 是由过滤器来决定的 用return
+//			把不是自己想要的数据全部过滤掉
+			filters:{
+				fn(val , zidingyi){
+					return val+zidingyi;
+				}
+			}
+		})
+	</script>
+	</body>
+</html>
